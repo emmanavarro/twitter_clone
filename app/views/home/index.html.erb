@@ -1,10 +1,5 @@
-<h1>Home#index</h1>
 <% if user_signed_in? %>
-
-  <% render 'dashboard' %>
-
+  <%= render 'dashboard' %>
 <% else %>
-
-  <% render 'welcome' %>
-
+  <%= render 'welcome' %>
 <% end %>

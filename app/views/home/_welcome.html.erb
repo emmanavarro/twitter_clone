@@ -1,1 +1,23 @@
-<h1>Welcome to login index!</h1>
+<div class="row h-100">
+  <div class="col" id="columns">
+    <%= image_tag 'cover_background.png', class: 'cover-background' %>
+    <div class="text-center h-100">
+      <i class="fab fa-twitter big-bird"></i>
+    </div>
+  </div>
+  <div class="col" id="columns">
+    <div class="col">
+      <i class="fab fa-twitter little-bird"></i>
+      <div class="text1">
+        <span>Happening now</span>
+      </div><br>
+      <div class="text2">
+        <span>Join Twitter today.</span>
+      </div><br>
+      <div class="d-grid gap-2 col-6">
+        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary rounded-pill' %>
+        <%= link_to "Log In", new_user_session_path, class: 'btn btn-outline-primary rounded-pill' %>
+      </div>
+    </div>
+  </div>
+</div>

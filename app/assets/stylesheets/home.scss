@@ -1,3 +1,46 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+html, body {
+    height: 100%;
+}
+
+#columns {
+    height: 100%;
+}
+
+.cover-background {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+    left: 0;
+    inset: 0px;
+}
+
+.fab fa-twitter {
+    position: relative;
+}
+
+.big-bird {
+    font-size: 300px;
+    color: #ffffff;
+}
+
+.little-bird {
+    font-size: 40px;
+    color: #1199fa
+}
+
+.text1 {
+    font-size: 65px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text2 {
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
