@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<%
+=begin%>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Twitter</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,4 +32,73 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> 
+<%
+=end%>
+
+<div class="row">
+  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="sidebar-sticky pt-3">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            <i class="fab fa-twitter fa-2x bird" ></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            <i class="fas fa-house-user"></i>
+            Home <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-hashtag"></i>
+            Explore
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="far fa-bell fa-1x"></i>
+            Notifications
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="far fa-envelope"></i>
+            Messages
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="far fa-bookmark"></i>
+            Saved
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="far fa-list-alt"></i>
+            Lists
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-user"></i>
+            Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-ellipsis-h"></i>
+            More Options
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn3' %>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
