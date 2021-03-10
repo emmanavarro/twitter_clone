@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <% unless action_name == "index" %>
+    <% if user_signed_in? %>
       <%= render partial: 'shared/header' %>
     <% end %>
 

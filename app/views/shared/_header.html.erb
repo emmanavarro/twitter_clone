@@ -9,15 +9,24 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+         <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Tweet", tweets_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light rounded-pill" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
