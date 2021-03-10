@@ -17,7 +17,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
 
     if @tweet.save
-      redirect_to @tweet, flash[:notice] = 'User was successfully created.'
+      redirect_to @tweet, flash[:notice] = 'Tweet was successfully created.'
     else
       render :new
     end
@@ -25,7 +25,7 @@ class TweetsController < ApplicationController
 
   def update
     if @tweet.update(tweet_params)
-      redirect_to @tweet, flash[:notice] = 'User was successfully updated.'
+      redirect_to @tweet, flash[:notice] = 'Tweet was successfully updated.'
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
 
   def destroy
     @tweet.destroy
-    redirect_to tweets_path, flash[:notice] = 'User was successfully deleted.'
+    redirect_to tweets_path, flash[:notice] = 'Tweet was successfully deleted.'
   end
 
   private
