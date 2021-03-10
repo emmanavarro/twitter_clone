@@ -1,5 +1,11 @@
-<% if user_signed_in? %>
+<%
+=begin%>
+ <% if user_signed_in? %>
   <%= render 'tweets/feed' %>
 <% else %>
   <%= render 'welcome' %>
-<% end %>
+<% end %> 
+<%
+=end%>
+
+<%= render 'welcome' %>
