@@ -2,13 +2,16 @@
 
 <div class="container">
   <div class="row align-items-start">
-    <div class="col-8">
+    <div class="col-4">
+      <%= render partial: 'profile'%>
+    </div>
+    <div class="col-6">
       <%= render partial: 'form'%>
       <br/>
       <% @tweets.each do |tweet| %>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Profile thumbnail</h5>
+            <%= gravatar_image_tag(current_user.email, size: 12, alt: current_user.name) %>
             <p><strong><%= tweet.user.name %></strong>,
              @<%= tweet.user.username %> ·
              <%= tweet.created_at.getlocal.strftime("%d %b. %Y · %I:%M %P") %></p>

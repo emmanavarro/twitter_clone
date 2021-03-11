@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'gravatar_image_tag'
 gem 'will_paginate'
 
 # Use Active Storage variant
