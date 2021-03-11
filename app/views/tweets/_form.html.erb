@@ -3,7 +3,7 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Profile thumbnail</h5>
-    <%= form_with model: @tweet, local: true do |f| %>
+    <%= form_with model: @tweet do |f| %>
       <% if @tweet.errors.any? %>
         <div class="alert alert-danger">
           <% @tweet.errors.each do |error| %>
