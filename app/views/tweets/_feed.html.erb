@@ -10,8 +10,8 @@
           <div class="card-body">
             <h5 class="card-title">Profile thumbnail</h5>
             <p><strong><%= tweet.user.name %></strong>,
-             @<%= tweet.user.username %> -
-             <%= tweet.created_at.getlocal.strftime("%d %b. %Y %I:%M %P") %></p>
+             @<%= tweet.user.username %> ·
+             <%= tweet.created_at.getlocal.strftime("%d %b. %Y · %I:%M %P") %></p>
             <p><%= tweet.tweet %></p>
 
             <% if user_signed_in? && current_user.id == tweet.user_id %>
