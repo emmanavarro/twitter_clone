@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :tweets, controllers: { registrations: :registrations }
+  resources :users
+  resources :tweets
   devise_for :users
   root 'home#index'
 end
