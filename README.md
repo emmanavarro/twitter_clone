@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: ruby 2.7.2
 
-Things you may want to cover:
+## Installation & Init 📖
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repository: `git clone https://github.com/daorejuela1/twitter_clone`
+2. Go to the folder: `cd twitter_clone`
+3. Install requirements `bundle`
+4. Create the data base `rails db:create`
+5. Run the migrations `rails db:migrate`
+6. Run the server: `rails s -b 0.0.0.0 -p 3000`
