@@ -30,3 +30,9 @@ When you log out you can see all the recent tweets from all the users using the 
 ### Follow/Unfollow
 
  - This software will allow you to follow/unfollow other users to see their tweets on your Feeds
+
+#### Follow me
+
+| Author | GitHub | Twitter | Linkedin |
+| :---: | :---: | :---: | :---: |
+| Emma Luisa Navarro | [emmanava](https://github.com/emmanavarro) | [@Ayy_Emma](https://twitter.com/Ayy_Emma) | [emmanavarromillan](https://www.linkedin.com/in/emmanavarromillan) |
