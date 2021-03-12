@@ -9,7 +9,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-         <% if user_signed_in? %>
+          <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Tweet", new_tweet_path, class: "nav-link" %>
           </li>
@@ -28,7 +28,8 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <a class="nav-link">@<%= current_user.username %></a>
+            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+            Hi @<%= current_user.username %>!
           </li>
           <li class="nav-item">
             <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light rounded-pill" %>
@@ -38,74 +39,3 @@
     </div>
   </div>
 </nav>
-
-<%
-=begin%>
- <div class="row">
-  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-    <div class="sidebar-sticky pt-3">
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">
-            <i class="fab fa-twitter fa-2x bird" ></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/">
-            <i class="fas fa-house-user"></i>
-            Home <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-hashtag"></i>
-            Explore
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="far fa-bell fa-1x"></i>
-            Notifications
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="far fa-envelope"></i>
-            Messages
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="far fa-bookmark"></i>
-            Saved
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="far fa-list-alt"></i>
-            Lists
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-user"></i>
-            Profile
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-ellipsis-h"></i>
-            More Options
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn3' %>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div> 
-<%
-=end%>
