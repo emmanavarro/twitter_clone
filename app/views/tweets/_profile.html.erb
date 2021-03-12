@@ -3,10 +3,18 @@
     <h5 class="card-title">
       <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
     </h5>
-    <p class="card-text">
-      <strong><%= current_user.name %></strong><br/>
-      <small>@<%= current_user.username %></small>
-    </p>
+    <% if user_signed_in? %>
+      <p class="card-text">
+        <strong><%= current_user.name %></strong><br/>
+        <small>@<%= current_user.username %></small>
+      </p>
+    <% else %>
+      <p class="card-text">
+        <strong><%= current_user.name %></strong><br/>
+        <small>@<%= current_user.username %></small>
+      </p>
+      <%= render partial: 'tweets/follow_button', :user => User.find_by_username(params[:id]) %>
+    <% end %>
     <div class="container border-top px-0">
       <div class="row justify-content-center">
         <div class="col text-center mt-3 px-2">
@@ -23,7 +31,7 @@
         </div>
         <div class="col mt-3 text-center px-2">
           <p>
-            <small><b>8</b></small>
+            <small><b><%= current_user.followers.count %></b></small>
             <small>Followers</small>
           </p>
         </div>

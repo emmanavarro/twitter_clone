@@ -5,7 +5,7 @@
     <div class="col-4">
       <%= render partial: 'profile'%>
     </div>
-    <div class="col-6">
+    <div class="col">
       <%= render partial: 'form'%>
       <br/>
       <% @tweets.each do |tweet| %>
@@ -13,8 +13,7 @@
           <div class="card-body">
             <%= gravatar_image_tag(current_user.email, size: 12, alt: current_user.name) %>
             <p><strong><%= tweet.user.name %></strong>,
-             @<%= tweet.user.username %> ·
-             <%= tweet.created_at.getlocal.strftime("%d %b. %Y · %I:%M %P") %></p>
+            @<%= tweet.user.username %> · <%= tweet.created_at.getlocal.strftime("%d %b. %Y · %I:%M %P") %></p>
             <p><%= tweet.tweet %></p>
 
             <% if user_signed_in? && current_user.id == tweet.user_id %>
@@ -36,17 +35,8 @@
         </div>
       <% end %>
     </div>
-    <div class="col">
-      <div class="card">
-        <div class="card-header">
-          Featured
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+    <div class="col-3">
+      <%= render partial: 'who_to_follow' %>
     </div>
   </div>
 </div>

@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all.order('created_at DESC').paginate(page: params[:page], per_page: 10)
     @tweet = Tweet.new
+    @users = User.all
   end
 
   def show; end
