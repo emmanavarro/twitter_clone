@@ -5,6 +5,10 @@
 - Ubuntu 18.04+
 - Ruby 2.7+
 - Rails 6+
+- Aditional gems:
+  * gem 'devise'
+  * gem 'gravatar_image_tag'
+  * gem 'will_paginate'
 
 ## Installation & Init
 
@@ -17,22 +21,20 @@
 
 ## Usage
 
-Get into the URL `127.0.0.1:3000` to start the web app, create a new account, go into your @username at the top of the web pages and start writing.
-
-When you log out you can see all the recent tweets from all the users using the system
+Get into the URL `127.0.0.1:3000` to start the web app, create a new account and start writing.
 
 ## Features
 
 ### Tweet
 
- - This action will allow you to tweet messages
+ - This action will allow you to tweet messages.
 
 ### Follow/Unfollow
 
- - This software will allow you to follow/unfollow other users to see their tweets on your Feeds
+ - This action will allow you to follow/unfollow other users to see their tweets in your feed.
 
 #### Follow me
 
 | Author | GitHub | Twitter | Linkedin |
 | :---: | :---: | :---: | :---: |
-| Emma Luisa Navarro | [emmanava](https://github.com/emmanavarro) | [@Ayy_Emma](https://twitter.com/Ayy_Emma) | [emmanavarromillan](https://www.linkedin.com/in/emmanavarromillan) |
+| Emma Luisa Navarro | [emmanavarro](https://github.com/emmanavarro) | [@Ayy_Emma](https://twitter.com/Ayy_Emma) | [emmanavarromillan](https://www.linkedin.com/in/emmanavarromillan) |
