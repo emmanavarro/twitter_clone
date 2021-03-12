@@ -1,38 +1,39 @@
 <div class="card">
+  <img src="https://picsum.photos/600/200" class="card-img-top" alt="Lorem picsum random image" %>
   <div class="card-body">
     <h5 class="card-title">
-      <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+      <%= gravatar_image_tag(@user.email, size: 64, class: "rounded-circle mr-1",alt: @user.name) %>
     </h5>
     <% if user_signed_in? %>
       <p class="card-text">
-        <strong><%= current_user.name %></strong><br/>
-        <small>@<%= current_user.username %></small>
+        <strong><%= @user.name %></strong><br/>
+        <small>@<%= @user.username %></small>
       </p>
     <% else %>
       <p class="card-text">
-        <strong><%= current_user.name %></strong><br/>
-        <small>@<%= current_user.username %></small>
+        <strong><%= @user.name %></strong><br/>
+        <small>@<%= @user.username %></small>
       </p>
-      <%= render partial: 'tweets/follow_button', :user => User.find_by_username(params[:id]) %>
+      <%= render 'tweets/follow_button', :user => User.find_by_username(params[:id]) %>
     <% end %>
     <div class="container border-top px-0">
       <div class="row justify-content-center">
         <div class="col text-center mt-3 px-2">
           <p>
-            <small><b><%= current_user.tweets.count %></b></small>
+            <small><b><%= @user.tweets.count %></b></small>
             <small>Tweets</small>
           </p>
         </div>
         <div class="col mt-3 text-center px-2">
           <p>
-            <small><b><%= current_user.following.count %></b></small>
-            <small>Following</small>
+            <small><b><%= @user.following.count %></b></small>
+            <small><%= link_to 'Following', following_user_path(@user), class: "text-decoration-none" %></small>
           </p>
         </div>
         <div class="col mt-3 text-center px-2">
           <p>
-            <small><b><%= current_user.followers.count %></b></small>
-            <small>Followers</small>
+            <small><b><%= @user.followers.count %></b></small>
+            <small><%= link_to 'Followers', followers_user_path(@user), class: "text-decoration-none" %></small>
           </p>
         </div>
       </div>
