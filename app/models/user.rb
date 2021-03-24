@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  default_scope -> { order(name: :ASC) }
+
   has_many :tweets, dependent: :destroy
 
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -13,7 +15,7 @@ class User < ApplicationRecord
   before_save :sanitisize_text
 
   validates :username, presence: true, uniqueness: true,
-                       length: { minimun: 6, maximum: 10 }
+                       length: { minimun: 6, maximum: 15 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX },

@@ -1,5 +1,7 @@
 class Tweet < ApplicationRecord
   belongs_to :user
 
-  validates :tweet, presence: true, length: { maximum: 280 }
+  default_scope -> { order(created_at: :DESC) }
+
+  validates :tweet, presence: true, length: { minimum: 1, maximum: 280 }
 end
