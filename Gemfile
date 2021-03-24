@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'gravatar_image_tag'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
