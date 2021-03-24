@@ -10,7 +10,7 @@
             <%= gravatar_image_tag(user.email, :gravatar => { :size => 50 }, class: "rounded-circle mr-1", alt: user.name) %>
             <p class="card-text">
               <b><%= user.name %></b><br/>
-              <small>@<%= user.username %></small>
+              <small><%= '@'+user.username %></small>
             </p>
             <%= render 'follow_button', user: user %>
           </div>

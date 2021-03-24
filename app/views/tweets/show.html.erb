@@ -2,7 +2,7 @@
   <div class="card-body">
     <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 50 }, class: "rounded-circle mr-1", alt: current_user.name) %>
     <p><strong><%= @tweet.user.name %></strong>,
-    @<%= @tweet.user.username %> · <%= @tweet.created_at.getlocal.strftime("%d %b. %Y · %I:%M %P") %></p>
+    <%= '@' + @tweet.user.username + '·' + @tweet.created_at.getlocal.strftime("%d %b. %Y · %I:%M %P") %></p>
     <p><%= @tweet.tweet %></p>
 
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
