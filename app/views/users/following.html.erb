@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card-header">
-    <b>You are following</b>
+    <b>Users followed by <%= @user.name %>: </b>
   </div>
-  <% current_user.following.each do |followed| %>
+  <% @user.following.each do |followed| %>
     <ul class="list-group list-group-flush">
       <li class="list-group-item p-0">
         <div class="card-body">
@@ -10,11 +10,19 @@
             <%= gravatar_image_tag(followed.email, :gravatar => { :size => 50 }, class: "rounded-circle mr-1", alt: followed.name) %>
             <br/>
             <b><%= followed.name %></b><br/>
-            <small>@<%= followed.username %></small>
+            <small><%= link_to '@' + followed.username, user_path(followed.id), class: "text-decoration-none" %></small>
           </p>
-          <%= render partial: 'tweets/follow_button', locals: { user: followed } %>
+          <% if followed != current_user %>
+            <% if !current_user.following? followed %>
+              <%= render partial: 'tweets/follow_button', locals: { user: followed } %>
+            <% end %>
+          <% end %>
         </div>
       </li>
     </ul>
   <% end %>
+</div>
+
+<div>
+  <%= link_to 'Back', tweets_path, class:"btn btn-primary" %>
 </div>

@@ -9,10 +9,13 @@
         <strong><%= @user.name %></strong><br/>
         <small>@<%= @user.username %></small>
       </p>
+      <% if (current_user != @user) %>
+        <%= render 'tweets/follow_button', user: @user %>
+      <% end %>
     <% else %>
       <p class="card-text">
         <strong><%= @user.name %></strong><br/>
-        <small>@<%= @user.username %></small>
+        <small><%= '@' + @user.username %></small>
       </p>
       <%= render 'tweets/follow_button', :user => User.find_by_username(params[:id]) %>
     <% end %>
