@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <h3 class="text-center">Follow another user</h3>
+
+  <%= form_with(url: searching_path, local:true) do |f| %>
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <%= f.text_field :followed, class: "form-control", placeholder: "username" %>
+      </div>
+    </div>
+    <%= f.submit "Follow user", class: "btn btn-primary" %>
+  <%end%>
+<% end %>
