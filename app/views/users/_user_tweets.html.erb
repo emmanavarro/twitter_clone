@@ -1,6 +1,6 @@
 <% if @user.tweets.any? %>
   <div class="col-7">
-    <% @user.tweets.each do |tweet| %>
+    <% @tweets.each do |tweet| %>
       <div class="card">
         <div class="card-body">
           <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 50 }, class: "rounded-circle mr-1", alt: current_user.name) %>

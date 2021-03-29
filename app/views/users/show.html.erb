@@ -2,6 +2,6 @@
   <%= render partial: 'tweets/profile', locals: {user: @user} %>
 </div>
 
-<%= render 'user_tweets' %>
+<%= render 'user_tweets', locals: {tweets: @tweets} %>
 
 <%= will_paginate @tweets %>
