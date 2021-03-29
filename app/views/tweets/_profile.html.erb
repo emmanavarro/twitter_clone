@@ -30,13 +30,13 @@
         <div class="col mt-3 text-center px-2">
           <p>
             <small><b><%= @user.following.count %></b></small>
-            <small><%= link_to 'Following', following_user_path(@user), class: "text-decoration-none" %></small>
+            <small><%= link_to 'Following', followings_path(@user.username), class: "text-decoration-none" %></small>
           </p>
         </div>
         <div class="col mt-3 text-center px-2">
           <p>
             <small><b><%= @user.followers.count %></b></small>
-            <small><%= link_to 'Followers', followers_user_path(@user), class: "text-decoration-none" %></small>
+            <small><%= link_to 'Followers', followers_path(@user.username), class: "text-decoration-none" %></small>
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <br/>
 
-<%= render 'feed'%>
+<%= render partial: 'feed', locals: { user: @user } %>
 <br/>
 <%= will_paginate @tweets %>
 <br/>
