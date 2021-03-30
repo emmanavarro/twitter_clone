@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
 
     user_followed = Relationship.create(follower: current_user, followed: @follow)
-    return redirect_to user_path(@follow.username), notice: "You are now following @#{@follow.username}"
+    redirect_to user_path(@follow.username), notice: "You are now following @#{@follow.username}"
   end
 
 end
