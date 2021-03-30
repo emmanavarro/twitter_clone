@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     if user_signed_in?
-      @tweets = Tweet.where(user_id: current_user.following).or(current_user.tweets).paginate(page: params[:page], per_page: 10)
+      @tweets = Tweet.includes(:user).where(user_id: current_user.following).or(current_user.tweets).paginate(page: params[:page], per_page: 10)
     else
       @tweets = @user.tweets.paginate(page: params[:page], per_page: 10)
     end
