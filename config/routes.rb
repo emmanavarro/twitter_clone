@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   resources :tweets
-  get 'searching', to: 'users#searching'
+  get 'searching', to: 'users#new'
   post 'searching', to: 'users#searching'
   get '/:username', to: 'users#show', as: 'user'
   scope ':username' do

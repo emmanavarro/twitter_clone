@@ -12,8 +12,8 @@
             <b><%= followed.name %></b><br/>
             <small><%= link_to '@' + followed.username, user_path(followed.username), class: "text-decoration-none" %></small>
           </p>
-          <% if followed != current_user %>
-            <% if !current_user.following? followed %>
+          <% if followed.username != current_user %>
+            <% if !current_user.following? followed.username %>
               <%= render partial: 'tweets/follow_button', locals: { user: followed } %>
             <% end %>
           <% end %>
